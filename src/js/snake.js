@@ -20,7 +20,8 @@ var foodY;
 
 var gameOver = false;
 let updateInterval
-window.onload = () => {
+
+let main = () => {
     board = document.getElementById("board");
     board.height = rows * blockSize;
     board.width = cols * blockSize;
@@ -32,26 +33,23 @@ window.onload = () => {
     updateInterval =setInterval(update, 100); //100 milliseconds
 }
 
+window.onload = main
+
 let regame = () => {
-    console.log("here")
 
     gameOver = false;
-    snakeX = Math.floor(Math.random() * cols) * blockSize;
-    snakeY = Math.floor(Math.random() * rows) * blockSize;
-    snakeBody=[];
     if(retry){
-        document.addEventListener("keypress",(e)=>{
-            if (e.code ==82) {
-                retry= false
-                updateInterval =setInterval(update, 100); //100 milliseconds
-            }
-        })
+        retry= false
+        setTimeout(()=>{                
+            main()
+        },3000)
     }
 }
 
 let update = () => {
     if (gameOver) {
         clearInterval(updateInterval);
+        console.log("여기")
         retry = true
         return regame();
     }
@@ -91,8 +89,7 @@ let update = () => {
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
             gameOver = true;
-            alert("Game Over");
-            window.onload()
+            alert("Game End")
         }
     }
 }
