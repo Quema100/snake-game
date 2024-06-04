@@ -92,6 +92,7 @@ let update = () => {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
             gameOver = true;
             alert("Game Over");
+            window.location.reload()
         }
     }
 }
