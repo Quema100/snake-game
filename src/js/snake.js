@@ -18,8 +18,7 @@ let retry = false
 var foodX;
 var foodY;
 
-var gameOver = false;
-let updateInterval
+let GameOver = false
 
 let main = () => {
     board = document.getElementById("board");
@@ -30,29 +29,18 @@ let main = () => {
     placeFood();
     document.addEventListener("keyup", changeDirection);
 
-    updateInterval =setInterval(update, 100); //100 milliseconds
+    setInterval(update, 100); //100 milliseconds
 }
 
 window.onload = main
 
-let regame = () => {
-
-    gameOver = false;
-    if(retry){
-        retry= false
-        setTimeout(()=>{                
-            main()
-        },3000)
-    }
-}
-
 let update = () => {
-    if (gameOver) {
-        clearInterval(updateInterval);
-        console.log("여기")
-        retry = true
-        return regame();
+
+    if (GameOver){
+        console.log("here")
+        return window.location.reload(),GameOver = false;
     }
+
     console.log(snakeBody.length)
     context.fillStyle="black";
     context.fillRect(0, 0, board.width, board.height);
@@ -82,14 +70,14 @@ let update = () => {
 
     //game over conditions
     if (snakeX < 0 || snakeX >= cols*blockSize || snakeY < 0 || snakeY >= rows*blockSize) {
-        gameOver = true;
-        alert("Game Over");
+        alert(`Game Over\nbest Score:${snakeBody.length}`);
+        GameOver = true
     }
 
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
-            gameOver = true;
             alert("Game End")
+            GameOver = true
         }
     }
 }

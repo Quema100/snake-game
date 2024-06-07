@@ -1,4 +1,18 @@
 body {
+    margin: 0;
+    background: #222222;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+}
+#Game{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#snake{
+    margin: 0;
+    color:aliceblue
 }
