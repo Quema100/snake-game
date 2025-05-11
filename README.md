@@ -1,14 +1,19 @@
 # 🐍 Snake Game
 A classic Snake game built with JavaScript, HTML, and CSS. Control the snake, eat food to grow, and avoid collisions with the walls or yourself.
 
+---
+
 ## 🎮 Live Demo
-Play the game here: quema100.github.io/snake-game
+Play the game here: [quema100.github.io/snake-game](https://quema100.github.io/snake-game/)
+
+---
 
 ## 🚀 Features
 
 - Smooth keyboard controls
-
 - Simple and clean UI
+
+---
 
 ## 🛠️ Installation
 1. Clone the repository:
@@ -23,6 +28,7 @@ Play the game here: quema100.github.io/snake-game
     
 3. Open index.html in your preferred web browser.
 
+---
 
 ### 📁 Project Structure
 
@@ -40,6 +46,8 @@ snake-game/
         ├── snake.js
         └── snakehelp.js
 ```
+
+---
 
 ## 🎯 How to Play
 - Use the arrow keys to control the direction of the snake.
